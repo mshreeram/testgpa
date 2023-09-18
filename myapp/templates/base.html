@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;700&display=swap');
+  </style>
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+  <title>GPA Mate</title>
+</head>
+<body>
+  <div class="nav">
+    <nav class="navbar">
+      <p class="title"><a href="/">GPA Mate</a><p>
+      <div class="links">
+        <a href="#" onclick="window.location.href = '/login';">Login</a>
+        <a href="#" onclick="window.location.href = '/register';">Register</a>
+      </div>
+    </nav>
+  </div>
+  <div class="body-content">
+    {% block content %}
+    {% endblock %}
+  </div>
+  <footer>
+    <p>Copyright © Shree Ram 💚</p>
+    <div class="socials">
+      <a href="https://github.com/mshreeram"><img src="{% static 'github.png' %}" alt="" width="30px"></a>
+      <a href="https://www.linkedin.com/in/shree-ram-meka-9082391b6/"><img src="{% static 'linkedin.png' %}" alt="" width="30px"></a>
+    </div>
+  </footer>
+</body>
+</html>

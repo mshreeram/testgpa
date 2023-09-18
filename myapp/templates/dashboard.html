@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="greet">Hello, {{user_first_name}} !!!</h1>
+
+<h2>↦ Number of Semesters Completed: {{nosc}}</h2>
+
+<hr>
+
+<h2 class="gpa"># Your current CGPA is: {{total}}</h2>
+
+<div class="card container">
+  <table class="container-table">
+    <thead>
+      <tr>
+        <th><h1>Semester</h1></th>
+        <th><h1>SGPA</h1></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for sem in lst %}
+      <tr>
+          <td>Semester{{ forloop.counter }}</td>
+          <td>{{ sem }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    
+  </table>
+  <a href="../profile"><button class="sub-submit"> Edit Profile </button></a>
+</div>
+<br>
+
+<hr>
+
+<p class="redirects"># To calculate expected sgpa <a href="../">click here</a></p>
+<p class="redirects"># To Logout <a href="../logout">click here</a></p>
+
+<script>
+  let links = document.querySelector('.links');
+  console.log(links);
+  links.style.display = "none";
+</script>
+
+{% endblock %}

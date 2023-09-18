@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="addTarget/" method="post">
+  {%  csrf_token %}
+  <!-- <label for="target-gpa">Enter Your Target GPA @ End of 8 semesters: </label>
+  <input type="number" step="0.01" value="" name="target-gpa" placeholder="Target gpa" max="10.0" min="4.0" required>
+  <br> -->
+  <h2 style="margin: 32px 0;"><label class="gpa" for="no-sem-completed">↦ Number of Semesters Completed: </label>
+  <input type="number" min="1" max="8" name="no-sem-completed" required>
+  </h2>
+  <button class="sub-submit" type="submit">Enter</button>
+</form>
+
+<hr>
+
+<p class="redirects"># To calculate expected sgpa <a href="../">click here</a></p>
+<p class="redirects"># To Logout <a href="../logout">click here</a></p>
+
+<script>
+  let links = document.querySelector('.links');
+  console.log(links);
+  links.style.display = "none";
+</script>
+
+{% endblock %}
